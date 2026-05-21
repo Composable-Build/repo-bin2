@@ -11,9 +11,9 @@ jobs:
       - run: cmake --build build
       - run: |
           mkdir -p dist
-          cp build/binary-demo dist/
-          tar -czf dist/binaries.tar.gz -C dist binary-demo
+          cp build/binary2-demo dist/
+          tar -czf dist/bin2.tar.gz -C dist binary2-demo
       - uses: actions/upload-artifact@v4
         with:
-          name: binaries
-          path: dist/binaries.tar.gz
+          name: bin2
+          path: dist/bin2.tar.gz

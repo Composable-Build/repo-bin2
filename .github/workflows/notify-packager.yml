@@ -2,11 +2,11 @@ name: notify-packager
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   call-packager:
-    uses: ton-org/repo-packager/.github/workflows/rebuild-packages.yml@main
+    uses: Composable-Build/repo-packager/.github/workflows/rebuild-packages.yml@main
     with:
       target: server-a
       ref: ${{ github.event.release.tag_name }}

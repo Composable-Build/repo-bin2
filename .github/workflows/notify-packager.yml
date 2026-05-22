@@ -1,9 +1,6 @@
 name: notify-packager
 
 on:
-  release:
-    types: [created]
-on:
   workflow_call:
     inputs:
       version:

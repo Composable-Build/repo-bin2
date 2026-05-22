@@ -64,4 +64,4 @@ jobs:
     needs: build
     uses: ./.github/workflows/notify-action.yml
     with:
-      version: ${{ steps.version.outputs.version }}
+      version: ${{  needs.build.outputs.version }}

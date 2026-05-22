@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "notify version ${{ inputs.version }}"
+      - run: test -n "${{ secrets.PACKAGER_TOKEN }}"
   call-packager:
     uses: Composable-Build/repo-packager/.github/workflows/rebuild-packages.yml@main
     with:

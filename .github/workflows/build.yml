@@ -62,6 +62,6 @@ jobs:
           name: binary_two ${{ steps.version.outputs.version }}
   notify:
     needs: build
-    uses: ./.github/workflows/notify-action.yml
+    uses: ./.github/workflows/notify-packager.yml
     with:
       version: ${{  needs.build.outputs.version }}

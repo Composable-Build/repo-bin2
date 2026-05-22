@@ -5,6 +5,10 @@ on:
     types: [created]
 
 jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "notify version ${{ inputs.version }}"
   call-packager:
     uses: Composable-Build/repo-packager/.github/workflows/rebuild-packages.yml@main
     with:

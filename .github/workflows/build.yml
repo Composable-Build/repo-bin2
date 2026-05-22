@@ -58,3 +58,8 @@ jobs:
         with:
           files: dist/binary_two-${{ steps.version.outputs.version }}.tar.gz
           name: binary_two ${{ steps.version.outputs.version }}
+  notify:
+    needs: build
+    uses: ./.github/workflows/notify-action.yml
+    with:
+      version: ${{ steps.version.outputs.version }}

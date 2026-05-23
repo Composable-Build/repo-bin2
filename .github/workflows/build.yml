@@ -68,5 +68,7 @@ jobs:
     needs: build
     uses: ./.github/workflows/notify-packager.yml
     with:
-      version: ${{  needs.build.outputs.version }}
+      version: ${{ needs.build.outputs.version }}
+      repo: repo-bin2
+      tag: ${{ TAG }}
     secrets: inherit

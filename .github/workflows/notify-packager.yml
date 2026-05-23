@@ -6,7 +6,12 @@ on:
       version:
         required: true
         type: string
-        
+      repo:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string        
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -16,7 +21,7 @@ jobs:
   call-packager:
     uses: Composable-Build/repo-packager/.github/workflows/rebuild-packages.yml@main
     with:
-      target: server-a
-      ref: ${{ github.event.release.tag_name }}
+      repo: ${{ inputs.repo }}
+      tag: ${{ inputs.tag }}
     secrets:
       PACKAGER_TOKEN: ${{ secrets.PACKAGER_TOKEN }}

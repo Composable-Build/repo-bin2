@@ -70,5 +70,5 @@ jobs:
     with:
       version: ${{ needs.build.outputs.version }}
       repo: repo-bin2
-      tag: ${{ TAG }}
+      tag: ${{ github.ref_name }}
     secrets: inherit

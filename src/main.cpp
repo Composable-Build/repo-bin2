@@ -11,4 +11,5 @@ int main(int argc, char** argv) {
     std::cout << BINARY_NAME << " " << get_version() << ": " << BINARY_MESSAGE << std::endl;
     
     return 0;
+    
 }
